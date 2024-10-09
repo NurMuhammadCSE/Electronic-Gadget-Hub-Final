@@ -22,7 +22,7 @@ const Sidebar: React.FC = () => {
       <div className="lg:hidden fixed top-4 left-4 z-50">
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="text-white bg-gray-800 p-2 rounded focus:outline-none"
+          className="text-white bg-gray-800 p-2 rounded"
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>

@@ -18,7 +18,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
   const dispatch = useDispatch();
 
   const { data: reviews } = useGetReviewsByProductIdQuery(product._id);
-  console.log(reviews?.data);
+  // console.log(reviews?.data);
   const onAddToCart = () => {
     dispatch(addToCart(product));
   };
