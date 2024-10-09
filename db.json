@@ -1,0 +1,93 @@
+[
+    {
+      "name": "55-Inch 4K Ultra HD Smart TV",
+      "description": "Experience stunning visuals with this 55-inch 4K Ultra HD Smart TV with built-in streaming apps.",
+      "price": 799.99,
+      "category": "Electronics",
+      "brand": "VisionMax",
+      "stock": 50,
+      "imageUrl": "https://placehold.co/600x400?text=55+Inch+4K+TV"
+    },
+    {
+      "name": "65-Inch 8K LED TV",
+      "description": "Immerse yourself in 8K resolution with this 65-inch LED TV, offering vibrant colors and deep blacks.",
+      "price": 1499.99,
+      "category": "Electronics",
+      "brand": "UltraVision",
+      "stock": 30,
+      "imageUrl": "https://placehold.co/600x400?text=65+Inch+8K+TV"
+    },
+    {
+      "name": "Smart Refrigerator with Ice Maker",
+      "description": "A spacious refrigerator with smart features and an ice maker for your convenience.",
+      "price": 999.99,
+      "category": "Fridge",
+      "brand": "CoolMaster",
+      "stock": 20,
+      "imageUrl": "https://placehold.co/600x400?text=Smart+Fridge"
+    },
+    {
+      "name": "Top-Freezer Refrigerator",
+      "description": "Classic top-freezer refrigerator with ample storage space and adjustable shelves.",
+      "price": 599.99,
+      "category": "Fridge",
+      "brand": "FrigoMax",
+      "stock": 25,
+      "imageUrl": "https://placehold.co/600x400?text=Top-Freezer+Fridge"
+    },
+    {
+      "name": "64GB iPhone 14 Pro",
+      "description": "The latest iPhone 14 Pro with 64GB storage, 5G capability, and stunning camera performance.",
+      "price": 999.99,
+      "category": "Mobile",
+      "brand": "Apple",
+      "stock": 40,
+      "imageUrl": "https://placehold.co/600x400?text=iPhone+14+Pro"
+    },
+    {
+      "name": "Samsung Galaxy S23 Ultra",
+      "description": "Powerful Samsung Galaxy S23 Ultra with high-resolution camera and large display.",
+      "price": 1199.99,
+      "category": "Mobile",
+      "brand": "Samsung",
+      "stock": 35,
+      "imageUrl": "https://placehold.co/600x400?text=Samsung+S23+Ultra"
+    },
+    {
+      "name": "32-Inch Full HD LED TV",
+      "description": "Compact 32-inch Full HD LED TV, perfect for smaller spaces and secondary rooms.",
+      "price": 299.99,
+      "category": "TV",
+      "brand": "Viewsonic",
+      "stock": 60,
+      "imageUrl": "https://placehold.co/600x400?text=32+Inch+Full+HD+TV"
+    },
+    {
+      "name": "Smart Fridge with Water Dispenser",
+      "description": "Modern refrigerator with built-in water dispenser and energy-saving features.",
+      "price": 1199.99,
+      "category": "Fridge",
+      "brand": "CoolerPlus",
+      "stock": 15,
+      "imageUrl": "https://placehold.co/600x400?text=Smart+Fridge+with+Water+Dispenser"
+    },
+    {
+      "name": "43-Inch 4K HDR TV",
+      "description": "43-inch 4K HDR TV with enhanced color and clarity for an immersive viewing experience.",
+      "price": 499.99,
+      "category": "TV",
+      "brand": "BrightVision",
+      "stock": 45,
+      "imageUrl": "https://placehold.co/600x400?text=43+Inch+4K+HDR+TV"
+    },
+    {
+      "name": "OnePlus 11T",
+      "description": "The OnePlus 11T with high-speed performance and excellent camera quality.",
+      "price": 749.99,
+      "category": "Mobile",
+      "brand": "OnePlus",
+      "stock": 50,
+      "imageUrl": "https://placehold.co/600x400?text=OnePlus+11T"
+    }
+  ]
+  
