@@ -62,19 +62,18 @@ function NavBar({ session }: { session: UserProps | null }) {
   const handleLogout = () => {
     // Get all cookies and delete each one by setting its expiration to the past
     const cookies = document.cookie.split(";");
-  
-    cookies.forEach(cookie => {
+
+    cookies.forEach((cookie) => {
       const eqPos = cookie.indexOf("=");
       const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
       document.cookie = `${name}=;expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
     });
-  
+
     // Dispatch the logout action and redirect to home
     dispatch(logout());
     setUser(null);
     router.push("/");
   };
-  
 
   if (!isClient) {
     return null; // Prevent rendering on the server
@@ -189,7 +188,12 @@ function NavBar({ session }: { session: UserProps | null }) {
         {/* Show Logout Button for Logged In Users */}
         {user?.email ? (
           <NavbarMenuItem>
-            <Button onClick={handleLogout} color="primary" variant="flat" fullWidth>
+            <Button
+              onClick={handleLogout}
+              color="primary"
+              variant="flat"
+              fullWidth
+            >
               Logout
             </Button>
           </NavbarMenuItem>
