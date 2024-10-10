@@ -4,18 +4,18 @@
 
 ## Live URLs
 
-- **Frontend**: [Gadget Hub Frontend](https://electronic-gadgets-shop-frontend.vercel.app/)
+- **Frontend**: [Gadget Hub Frontend](https://electronic-gadget-hub-final.vercel.app/)
 - **Backend**: [Gadget Hub Backend](https://electronic-gadgets-shop-backend.vercel.app/)
 
 
 ## 🚀 Demo Credentials
 
 ### Admin Login
-- **Email**: web@programming-hero.com
+- **Email**: admin@gmail.com
 - **Password**: 123456
 
 ### User Login
-- **Email**: web1@programming-hero.com
+- **Email**: user@gmail.com
 - **Password**: 123456
 
 
