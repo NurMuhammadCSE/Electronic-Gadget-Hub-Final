@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import NavBar from "./components/shared/Navbar";
 import Footer from "./components/shared/Footer";
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/utils/authOptions";
 
 export const metadata: Metadata = {
   title: "Gadget Hub",
@@ -14,11 +12,10 @@ export default async function CommonLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const session = await getServerSession(authOptions)
 
   return (
     <div>
-      <NavBar session={session}/>
+      <NavBar/>
       <main className="min-h-screen max-w-screen-xl	mx-auto">{children}</main>
       <Footer />
     </div>

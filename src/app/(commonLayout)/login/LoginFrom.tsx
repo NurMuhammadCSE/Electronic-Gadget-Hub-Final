@@ -13,8 +13,6 @@ import { useState } from "react";
 import { setToken, setUser } from "@/redux/feature/userSlice";
 import { jwtDecode } from "jwt-decode";
 import { SubmitHandler, useForm } from "react-hook-form";
-// import { signIn } from "next-auth/react";
-// import Image from "next/image";
 
 export default function LoginForm() {
   const router = useRouter();
@@ -68,11 +66,6 @@ export default function LoginForm() {
   const [isVisible, setIsVisible] = useState(false);
 
   const toggleVisibility = () => setIsVisible(!isVisible);
-
-  // Function to handle Google login
-  // const handleGoogleLogin = async () => {
-  //   signIn("google", { callbackUrl: "/" });
-  // };
 
   return (
     <div className="">
@@ -142,18 +135,6 @@ export default function LoginForm() {
           <ActionSubmitButton>Login</ActionSubmitButton>
         </div>
       </form>
-      {/* <p className="text-center">Or Sign Up Using</p>
-
-      <div className="flex justify-center mb-10 mt-2">
-        <button onClick={handleGoogleLogin} className="btn btn-circle ">
-          <Image
-            src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-webinar-optimizing-for-success-google-business-webinar-13.png"
-            width={50}
-            height={50}
-            alt="google logo"
-          />
-        </button> 
-      </div>*/}
     </div>
   );
 }

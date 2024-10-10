@@ -6,8 +6,6 @@ import ActionSubmitButton from "../components/shared/submitButton/ActionSubmitBu
 import { useSignUpMutation } from "@/redux/api/authApi";
 import { useRouter } from "next/navigation";
 import { SubmitHandler, useForm } from "react-hook-form";
-// import { signIn } from "next-auth/react";
-// import Image from "next/image";
 
 const SignUpFrom = () => {
   const router = useRouter();
@@ -50,11 +48,6 @@ const SignUpFrom = () => {
       toast.error("Something went wrong!");
     }
   };
-
-  // Function to handle Google login
-  // const handleGoogleLogin = async () => {
-  //   signIn("google", { callbackUrl: "/" });
-  // };
 
   return (
     <div>
@@ -101,18 +94,6 @@ const SignUpFrom = () => {
           <ActionSubmitButton>Sign Up</ActionSubmitButton>
         </div>
       </form>
-      {/* <p className="mt-5 text-center">Or Sign Up Using</p>
-
-      <div className="flex justify-center mb-10 mt-2">
-        <button onClick={handleGoogleLogin} className="btn btn-circle ">
-          <Image
-            src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-webinar-optimizing-for-success-google-business-webinar-13.png"
-            width={50}
-            height={50}
-            alt="google logo"
-          />
-        </button>
-      </div> */}
     </div>
   );
 };

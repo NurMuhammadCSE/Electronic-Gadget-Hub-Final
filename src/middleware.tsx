@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import {jwtDecode} from "jwt-decode"; // Make sure jwt-decode is installed
+import { jwtDecode } from "jwt-decode"; // Make sure jwt-decode is installed
 
 export function middleware(request: NextRequest) {
   // Retrieve token from cookies
@@ -35,7 +35,7 @@ export function middleware(request: NextRequest) {
 // Function to log out the user by clearing the auth-token cookie and redirecting to the login page
 function logoutUser(request: NextRequest) {
   const response = NextResponse.redirect(new URL("/login", request.url));
-  response.cookies.set('auth-token', '', { maxAge: 0 }); // Clear the token
+  response.cookies.set("auth-token", "", { maxAge: 0 }); // Clear the token
   return response;
 }
 

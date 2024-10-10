@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import Navbar from "@/app/(commonLayout)/components/shared/Navbar";
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/utils/authOptions";
 
 export const metadata: Metadata = {
   title: "Admin Dashboard",
@@ -14,13 +12,12 @@ export default async function userDashboardLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const session = await getServerSession(authOptions);
 
   return (
     <div>
       {/* Navbar */}
       <div className="fixed w-full z-50">
-        <Navbar session={session}></Navbar>
+        <Navbar></Navbar>
       </div>
 
       {/* Main layout with sidebar and content */}

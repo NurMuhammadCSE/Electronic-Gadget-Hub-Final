@@ -1,15 +1,10 @@
-"use client"; // Make this component a client component
-import { useSession } from "next-auth/react";
+"use client";
 import { useAppSelector } from "@/redux/hooks";
 import React from "react";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 
 const MyProfile = () => {
-  // Fetch session using next-auth
-  const { data: session } = useSession();
-  // console.log(session);
-
   // Get user data from Redux store
   const { user } = useAppSelector((state) => state.user); // Adjust based on your Redux state shape
 
@@ -33,7 +28,7 @@ const MyProfile = () => {
 
         {/* Title */}
         <h1 className="text-3xl font-bold text-center text-gray-900 mb-4">
-          {user?.name || session?.user?.name}&apos;s Profile
+          {user?.name}&apos;s Profile
         </h1>
 
         {/* Profile Information */}
@@ -46,11 +41,11 @@ const MyProfile = () => {
           )}
           <div className="flex justify-between text-gray-700">
             <span className="font-medium">Name:</span>
-            <span className="font-light">{user?.name || session?.user?.name}</span>
+            <span className="font-light">{user?.name}</span>
           </div>
           <div className="flex justify-between text-gray-700">
             <span className="font-medium">Email:</span>
-            <span className="font-light">{user?.email || session?.user?.email}</span>
+            <span className="font-light">{user?.email}</span>
           </div>
           {user?.role && (
             <div className="flex justify-between text-gray-700">
