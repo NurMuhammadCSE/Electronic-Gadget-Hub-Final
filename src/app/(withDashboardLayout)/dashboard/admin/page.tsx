@@ -415,7 +415,7 @@ const AdminDashboard = () => {
       const productDetails = products.data.find(
         (p: any) => p._id === product.product
       );
-      console.log(productDetails);
+      // console.log(productDetails);
       return {
         name: productDetails?.name || "Unknown",
         quantity: product.quantity,

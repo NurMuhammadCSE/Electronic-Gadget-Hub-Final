@@ -54,8 +54,8 @@ const productApi = baseApi.injectEndpoints({
     createProduct: builder.mutation({
       query: ({ token, productData }) => {
         // Log the token and productData
-        console.log("Token:", token);
-        console.log("Product Data:", productData);
+        // console.log("Token:", token);
+        // console.log("Product Data:", productData);
 
         return {
           method: "POST", // Use POST for creating a new product

@@ -7,7 +7,7 @@ import { Product } from "@/types";
 import React from "react";
 
 const Category = ({ params }: any) => {
-  console.log(params.category);
+  // console.log(params.category);
   const { data, isError, isLoading } = useGetProductsQuery("");
 
   // Filter products by category
