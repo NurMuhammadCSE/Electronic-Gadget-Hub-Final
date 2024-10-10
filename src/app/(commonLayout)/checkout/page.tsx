@@ -45,7 +45,7 @@ const CheckoutPage = () => {
     await createOrder({ order, token });
     toast.success("Order placed successfully!");
     handleClearCart();
-    router.push("/");
+    router.push("/dashboard/my-orders");
   };
 
   return (
