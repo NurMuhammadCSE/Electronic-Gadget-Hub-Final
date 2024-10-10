@@ -178,7 +178,7 @@ const AdminDashboard = () => {
 
   // Prepare order totals grouped by date
   const aggregatedOrders = orderData.reduce((acc: any, order: any) => {
-    console.log(order);
+    // console.log(order);
     const { name, total } = order;
     if (!acc[name]) {
       acc[name] = { name, total: 0 };

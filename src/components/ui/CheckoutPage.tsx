@@ -30,7 +30,7 @@ const CheckoutPage = () => {
       status: "pending",
       paymentMethod: "Cash On Delivery",
     };
-    console.log(order);
+    // console.log(order);
     // dispatch(createOrder(order));
     createOrder({ order, token });
     toast.success("Order placed successfully!");

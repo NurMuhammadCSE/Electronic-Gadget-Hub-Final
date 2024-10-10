@@ -19,7 +19,7 @@ const Sidebar: React.FC = () => {
   return (
     <div className="w-64">
       {/* Sidebar Toggle Button for Mobile */}
-      <div className="lg:hidden fixed top-4 left-4 z-50">
+      <div className="lg:hidden mt-12 fixed top-4 left-4 z-50">
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="text-white bg-gray-800 p-2 rounded"
