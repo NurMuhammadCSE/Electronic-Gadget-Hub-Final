@@ -36,7 +36,7 @@ const productApi = baseApi.injectEndpoints({
     }),
     updateOrderStatus: builder.mutation({
       query: ({ status, token, orderId }) => {
-        console.log(orderId, status, token); // Debug log to check values
+        // console.log(orderId, status, token); // Debug log to check values
         return {
           method: "PATCH",
           url: `/order/${orderId}`,
