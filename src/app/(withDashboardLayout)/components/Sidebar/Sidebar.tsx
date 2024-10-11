@@ -2,18 +2,42 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { ShoppingCart, Box, List, Menu, X, UserRoundPen } from "lucide-react";
+import {
+  ShoppingCart,
+  Box,
+  List,
+  Menu,
+  X,
+  UserRoundPen,
+  Home,
+} from "lucide-react";
 import dynamic from "next/dynamic";
 
 const Sidebar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const menuItems = [
-    // { label: "Home", icon: <Home size={24} />, href: "/" },
-    { label: "Products", icon: <Box size={24} />, href: "/dashboard/admin/products" },
-    { label: "Add Product", icon: <List size={24} />, href: "/dashboard/admin/products/add-product" },
-    { label: "Orders", icon: <ShoppingCart size={24} />, href: "/dashboard/admin/orders" },
-    { label: "Profile", icon: <UserRoundPen size={24} />, href: "/dashboard/admin/my-profile" },
+    { label: "Dashboard", icon: <Home size={24} />, href: "/dashboard/admin" },
+    {
+      label: "Products",
+      icon: <Box size={24} />,
+      href: "/dashboard/admin/products",
+    },
+    {
+      label: "Add Product",
+      icon: <List size={24} />,
+      href: "/dashboard/admin/products/add-product",
+    },
+    {
+      label: "Orders",
+      icon: <ShoppingCart size={24} />,
+      href: "/dashboard/admin/orders",
+    },
+    {
+      label: "Profile",
+      icon: <UserRoundPen size={24} />,
+      href: "/dashboard/admin/my-profile",
+    },
   ];
 
   return (
@@ -32,7 +56,7 @@ const Sidebar: React.FC = () => {
       <div
         className={`z-10 md:fixed flex justify-between overflow-x-hidden inset-y-0 left-0 transform ${
           isOpen && "-translate-x-full"
-        }  bg-[#ffffff] dark:bg-black dark:text-white text-black w-64 px-6 pt-16  transition-transform duration-300 ease-in-out shadow-lg`}  // Add pt-16 here to offset for navbar
+        }  bg-[#ffffff] dark:bg-black dark:text-white text-black w-64 px-6 pt-16  transition-transform duration-300 ease-in-out shadow-lg`} // Add pt-16 here to offset for navbar
       >
         {/* Sidebar Navigation */}
         <nav className="flex flex-col space-y-4">
