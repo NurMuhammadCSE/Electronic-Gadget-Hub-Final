@@ -8,11 +8,21 @@ import "@smastrom/react-rating/style.css";
 import { Pagination } from "swiper/modules";
 import Image from "next/image";
 import { useGetAllReviewsQuery } from "@/redux/api/reviewApi";
+import LoadingPage from "@/app/loading";
+import dynamic from "next/dynamic";
 
 const ProductReviews: React.FC = () => {
   // Fetch all reviews
-  const { data: reviews } = useGetAllReviewsQuery(undefined);
-  // console.log(reviews?.data);
+  const { data: reviews, isError, isLoading } = useGetAllReviewsQuery(undefined);
+
+  if (isLoading)
+    return (
+      <p className="text-center text-gray-500">
+        <LoadingPage />
+      </p>
+    );
+  if (isError)
+    return <p className="text-center text-red-500">Error Loading Reviews</p>;
 
   return (
     <section className="py-12 bg-gradient-to-r from-indigo-50 to-blue-50">
@@ -42,7 +52,7 @@ const ProductReviews: React.FC = () => {
       >
         {reviews?.data?.map((testimonial: any, index: any) => (
           <SwiperSlide key={index}>
-            <div className="flex flex-col items-center text-center bg-white shadow-lg rounded-lg p-6 transition-transform transform hover:scale-105 hover:shadow-2xl duration-300 ease-in-out">
+            <div className="flex flex-col items-center text-center bg-white shadow-lg rounded-lg p-6 h-full transition-transform transform hover:scale-105 hover:shadow-2xl duration-300 ease-in-out">
               <Image
                 height={120}
                 width={120}
@@ -62,7 +72,7 @@ const ProductReviews: React.FC = () => {
               <span className="text-gray-700 mt-2">
                 {testimonial.rating.toFixed(1)}/5
               </span>
-              <p className="mt-4 text-lg text-gray-600 max-w-lg leading-relaxed">
+              <p className="mt-4 text-lg text-gray-600 max-w-lg leading-relaxed flex-grow">
                 {testimonial.review}
               </p>
             </div>
@@ -73,4 +83,4 @@ const ProductReviews: React.FC = () => {
   );
 };
 
-export default ProductReviews;
+export default dynamic(() => Promise.resolve(ProductReviews), { ssr: false });

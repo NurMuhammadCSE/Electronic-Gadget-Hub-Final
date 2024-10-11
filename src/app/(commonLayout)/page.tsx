@@ -39,6 +39,7 @@ const ProductReviews = dynamic(() => import("@/components/ui/ProductReviews"), {
 const LatestArrivals = dynamic(() => import("@/components/ui/LatestArrivals"), { ssr: false });
 const WhyShopWithUs = dynamic(() => import("@/components/ui/WhyShopWithUs"), { ssr: false });
 const HeroSectionContainer = dynamic(() => import("@/components/ui/HeroSection"), { ssr: false });
+const ProductArea = dynamic(() => import("@/components/ui/ProductArea"), { ssr: false });
 
 const CommonPage = () => {
   const [isClient, setIsClient] = useState(false);
@@ -60,6 +61,7 @@ const CommonPage = () => {
       <SpecialOffers />
       <ProductReviews />
       <WhyShopWithUs />
+      <ProductArea></ProductArea>
     </div>
   );
 };
