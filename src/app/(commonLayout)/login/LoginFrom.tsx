@@ -56,7 +56,9 @@ export default function LoginForm() {
         document.cookie = `auth-token=${token}`;
 
         // Redirect to homepage after successful login
+        // window.location.reload(); // This line can be removed if not needed
         router.push("/");
+
       }
     } catch (error) {
       console.error(error);

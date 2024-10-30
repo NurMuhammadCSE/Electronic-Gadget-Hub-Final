@@ -45,6 +45,7 @@ const CommonPage = () => {
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
+    // window.location.reload();
     setIsClient(true);
   }, []);
 
