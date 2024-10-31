@@ -54,9 +54,9 @@ const OrderSummary = () => {
 
         <Link href="/checkout">
           <button
-            // onClick={(e) => {
-            //   e.stopPropagation();
-            // }}
+            onClick={(e) => {
+              e.stopPropagation();
+            }}
             className="w-full flex items-center justify-between px-4 py-2 text-xs font-semibold text-white bg-green-600 rounded-md hover:bg-green-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-green-500"
           >
             <span>Proceed to Checkout</span>

@@ -17,6 +17,7 @@ const CheckoutPage = () => {
 
   const { products, totalPrice } = useAppSelector((state) => state.cart);
   const [createOrder, { isError, isLoading }] = useCreteOrderMutation();
+  
   const { user, token } = useAppSelector((state) => state.user);
   const deliveryCharge = 15;
   const grandTotal = totalPrice + deliveryCharge;
