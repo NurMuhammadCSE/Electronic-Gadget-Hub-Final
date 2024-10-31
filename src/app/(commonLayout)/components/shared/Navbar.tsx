@@ -222,6 +222,7 @@
 // }
 
 // export default dynamic(() => Promise.resolve(NavBar), { ssr: false });
+
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
@@ -249,61 +250,52 @@ import { jwtDecode } from "jwt-decode"; // Correct import without curly braces
 
 function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [token, setToken] = useState<string | null>(null);
   const { user } = useAppSelector((state) => state.user);
   const { selectedItems } = useAppSelector((state) => state.cart);
   const dispatch = useAppDispatch();
   const { setUser } = useAuth();
   const router = useRouter();
 
-  // Function to retrieve the token from cookies
-  const getToken = () => {
-    return document.cookie
-      .split("; ")
-      .find((row) => row.startsWith("auth-token="))
-      ?.split("=")[1];
+  // Helper function to get the value of a specific cookie
+  const getCookie = (name: string) => {
+    const match = document.cookie.match(
+      new RegExp("(^| )" + name + "=([^;]+)")
+    );
+    return match ? match[2] : null;
   };
 
   useEffect(() => {
-    const token = getToken();
-
-    // Redirect to login if token is missing or invalid
-    if (!token) {
-      router.push("/login");
-    } else {
-      try {
-        // Optionally decode token to check validity
-        const decodedToken: any = jwtDecode(token);
-        if (!decodedToken?.email) {
-          router.push("/login");
-        }
-      } catch (error) {
-        console.error("Invalid token:", error);
-        router.push("/login");
-      }
-    }
-  }, [user, router]);
+    // Retrieve the token from cookies and set it in state
+    const authToken = getCookie("auth-token");
+    setToken(authToken);
+  }, []);
 
   const menuItems = ["Products", "Dashboard"];
+
   const routeMap: Record<string, string> = {
     user: "/dashboard/my-orders",
     admin: "/dashboard/admin",
   };
 
-
   const handleLogout = () => {
-    // Delete all cookies by setting expiration to past date
+    // Get all cookies and delete each one by setting its expiration to the past
     const cookies = document.cookie.split(";");
+
     cookies.forEach((cookie) => {
       const eqPos = cookie.indexOf("=");
       const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
       document.cookie = `${name}=;expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
     });
 
-    // Dispatch logout action and redirect to home
+    // Dispatch the logout action and redirect to home
     dispatch(logout());
     setUser(null);
-    router.push("/");
+    router.push("/"); // Redirect to home after logout
   };
+
+  // console.log("Token from cookie:", token);
+  // const decodedToken: any = jwtDecode(token);
 
   return (
     <Navbar
