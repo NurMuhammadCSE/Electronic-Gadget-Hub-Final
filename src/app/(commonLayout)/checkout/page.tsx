@@ -1,6 +1,5 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
-
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
@@ -9,7 +8,6 @@ import { clearCart } from "@/redux/feature/cartSlice";
 import { Trash2 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
-// import { createOrder } from "@/redux/feature/orderSlice";
 import { useCreteOrderMutation } from "@/redux/api/orderApi";
 import dynamic from "next/dynamic";
 
@@ -31,7 +29,7 @@ const CheckoutPage = () => {
     const order = {
       user: user.userId,
       products: products.map((product: any) => ({
-        product: product._id, // Make sure the product object has _id
+        product: product._id,
         quantity: product.quantity,
         // name:product.name,
         // price:product.price

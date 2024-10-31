@@ -52,16 +52,16 @@ const OrderSummary = () => {
           <Trash2 className="inline" width={15} height={15} />
         </button>
 
-        <Link href={'/checkout'}>
-        <button
-          onClick={(e) => {
-            e.stopPropagation();
-          }}
-          className="w-full flex items-center justify-between px-4 py-2 text-xs font-semibold text-white bg-green-600 rounded-md hover:bg-green-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-green-500"
-        >
-          <span>Proceed to Checkout</span>
-          <CreditCard className="inline" width={15} height={15} />
-        </button>
+        <Link href="/checkout">
+          <button
+            // onClick={(e) => {
+            //   e.stopPropagation();
+            // }}
+            className="w-full flex items-center justify-between px-4 py-2 text-xs font-semibold text-white bg-green-600 rounded-md hover:bg-green-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-green-500"
+          >
+            <span>Proceed to Checkout</span>
+            <CreditCard className="inline" width={15} height={15} />
+          </button>
         </Link>
       </div>
     </div>

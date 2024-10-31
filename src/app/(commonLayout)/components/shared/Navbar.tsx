@@ -72,13 +72,13 @@ function NavBar() {
 
   const handleLogout = () => {
     // Get all cookies and delete each one by setting its expiration to the past
-    // const cookies = document.cookie.split(";");
+    const cookies = document.cookie.split(";");
 
-    // cookies.forEach((cookie) => {
-    //   const eqPos = cookie.indexOf("=");
-    //   const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
-    //   document.cookie = `${name}=;expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
-    // });
+    cookies.forEach((cookie) => {
+      const eqPos = cookie.indexOf("=");
+      const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+      document.cookie = `${name}=;expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+    });
 
     // Dispatch the logout action and redirect to home
     dispatch(logout());
