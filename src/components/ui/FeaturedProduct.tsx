@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import 'swiper/css/effect-coverflow';
 import "swiper/css/pagination";
-import { Pagination, EffectCoverflow } from "swiper/modules";
+import { Pagination } from "swiper/modules";
 import Image from "next/image";
 
 // Example Product Data
@@ -59,22 +59,22 @@ export default function FeaturedProducts() {
         Featured Products
       </h2>
       <Swiper
-        effect={"coverflow"}
-        grabCursor={true}
-        centeredSlides={true}
-        slidesPerView={"auto"}
-        coverflowEffect={{
-          rotate: 50,
-          stretch: 0,
-          depth: 100,
-          modifier: 1,
-          slideShadows: true,
-        }}
-        // spaceBetween={30}
-        // slidesPerView={1} // Default for mobile
+        // effect={"coverflow"}
+        // grabCursor={true}
+        // centeredSlides={true}
+        // slidesPerView={"auto"}
+        // coverflowEffect={{
+        //   rotate: 50,
+        //   stretch: 0,
+        //   depth: 100,
+        //   modifier: 1,
+        //   slideShadows: true,
+        // }}
+        // // spaceBetween={30}
+        slidesPerView={1} // Default for mobile
         spaceBetween={10}
         pagination={{ clickable: true }}
-        modules={[Pagination, EffectCoverflow]}
+        modules={[Pagination]}
         className="mySwiper"
         breakpoints={{
           // Adjusted breakpoints for better responsiveness
