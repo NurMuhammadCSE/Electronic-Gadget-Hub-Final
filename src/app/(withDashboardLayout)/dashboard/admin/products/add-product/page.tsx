@@ -20,6 +20,7 @@ import { useAppSelector } from "@/redux/hooks";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 import dynamic from "next/dynamic";
+import { getFromLocalStorage } from "@/utils/local-storage";
 
 const AddProduct = () => {
   const [productData, setProductData] = useState({
@@ -37,7 +38,8 @@ const AddProduct = () => {
   // Fetch products to extract categories
   const { data: products } = useGetProductsQuery("");
   const [createProduct] = useCreateProductMutation();
-  const { token } = useAppSelector((state) => state.user);
+  // const { token } = useAppSelector((state) => state.user);
+  const token = getFromLocalStorage("accessToken");
 
   // Get unique categories from the product data
   const categories = useMemo(() => {

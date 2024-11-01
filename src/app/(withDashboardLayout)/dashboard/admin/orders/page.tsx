@@ -7,9 +7,10 @@ import {
   useGetAllOrdersQuery,
   useUpdateOrderStatusMutation,
 } from "@/redux/api/orderApi";
-import { useAppSelector } from "@/redux/hooks";
+// import { useAppSelector } from "@/redux/hooks";
 import dynamic from "next/dynamic";
 import LoadingPage from "@/app/loading";
+import { getFromLocalStorage } from "@/utils/local-storage";
 
 const statusColors: { [key: string]: string } = {
   Pending: "bg-yellow-300 text-black",
@@ -18,7 +19,9 @@ const statusColors: { [key: string]: string } = {
 };
 
 const OrdersManagement = () => {
-  const { token } = useAppSelector((state) => state.user);
+  // const { token } = useAppSelector((state) => state.user);
+  const token = getFromLocalStorage("accessToken");
+
   const { data: ordersData, isLoading, error } = useGetAllOrdersQuery(token);
   const [updateOrder] = useUpdateOrderStatusMutation();
 

@@ -3,9 +3,10 @@ import React from "react";
 import { Rating } from "@smastrom/react-rating";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import 'swiper/css/effect-coverflow';
 import "swiper/css/pagination";
 import "@smastrom/react-rating/style.css";
-import { Pagination } from "swiper/modules";
+import { Pagination , EffectCoverflow} from "swiper/modules";
 import Image from "next/image";
 import { useGetAllReviewsQuery } from "@/redux/api/reviewApi";
 import LoadingPage from "@/app/loading";
@@ -13,7 +14,11 @@ import dynamic from "next/dynamic";
 
 const ProductReviews: React.FC = () => {
   // Fetch all reviews
-  const { data: reviews, isError, isLoading } = useGetAllReviewsQuery(undefined);
+  const {
+    data: reviews,
+    isError,
+    isLoading,
+  } = useGetAllReviewsQuery(undefined);
 
   if (isLoading)
     return (
@@ -30,8 +35,19 @@ const ProductReviews: React.FC = () => {
         Top Product Reviews & Ratings
       </h2>
       <Swiper
+        effect={"coverflow"}
+        grabCursor={true}
+        centeredSlides={true}
+        slidesPerView={"auto"}
+        coverflowEffect={{
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
+        }}
         spaceBetween={30}
-        slidesPerView={1}
+        // slidesPerView={1}
         breakpoints={{
           640: {
             slidesPerView: 1,
@@ -47,7 +63,7 @@ const ProductReviews: React.FC = () => {
           },
         }}
         pagination={{ clickable: true }}
-        modules={[Pagination]}
+        modules={[Pagination, EffectCoverflow]}
         className="w-full"
       >
         {reviews?.data?.map((testimonial: any, index: any) => (

@@ -1,8 +1,9 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import 'swiper/css/effect-coverflow';
 import "swiper/css/pagination";
-import { Pagination } from "swiper/modules";
+import { Pagination, EffectCoverflow } from "swiper/modules";
 import Image from "next/image";
 
 // Example Product Data
@@ -58,10 +59,22 @@ export default function FeaturedProducts() {
         Featured Products
       </h2>
       <Swiper
-        slidesPerView={1} // Default for mobile
+        effect={"coverflow"}
+        grabCursor={true}
+        centeredSlides={true}
+        slidesPerView={"auto"}
+        coverflowEffect={{
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
+        }}
+        // spaceBetween={30}
+        // slidesPerView={1} // Default for mobile
         spaceBetween={10}
         pagination={{ clickable: true }}
-        modules={[Pagination]}
+        modules={[Pagination, EffectCoverflow]}
         className="mySwiper"
         breakpoints={{
           // Adjusted breakpoints for better responsiveness
@@ -90,8 +103,12 @@ export default function FeaturedProducts() {
                 </div>
               </div>
               <div className="text-center mt-4">
-                <p className="text-sm md:text-base text-gray-500">{product.category}</p>
-                <p className="text-lg font-bold mt-2">${product.price.toFixed(2)}</p>
+                <p className="text-sm md:text-base text-gray-500">
+                  {product.category}
+                </p>
+                <p className="text-lg font-bold mt-2">
+                  ${product.price.toFixed(2)}
+                </p>
               </div>
             </div>
           </SwiperSlide>

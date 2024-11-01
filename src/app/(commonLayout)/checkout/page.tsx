@@ -10,6 +10,8 @@ import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { useCreteOrderMutation } from "@/redux/api/orderApi";
 import dynamic from "next/dynamic";
+import { getFromLocalStorage } from "@/utils/local-storage";
+import { getUserInfo } from "../action/userInfoData";
 
 const CheckoutPage = () => {
   const dispatch = useAppDispatch();
@@ -18,7 +20,10 @@ const CheckoutPage = () => {
   const { products, totalPrice } = useAppSelector((state) => state.cart);
   const [createOrder, { isError, isLoading }] = useCreteOrderMutation();
   
-  const { user, token } = useAppSelector((state) => state.user);
+  // const { user, token } = useAppSelector((state) => state.user);
+  const token = getFromLocalStorage("accessToken");
+  const user = getUserInfo();
+
   const deliveryCharge = 15;
   const grandTotal = totalPrice + deliveryCharge;
 

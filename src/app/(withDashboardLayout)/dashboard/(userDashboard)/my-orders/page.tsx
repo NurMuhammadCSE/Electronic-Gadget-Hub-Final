@@ -3,15 +3,16 @@
 
 import React, { useState } from "react";
 import { useGetUserOrdersQuery } from "@/redux/api/orderApi"; // Assuming you have an order API
-import { useAppSelector } from "@/redux/hooks";
 import dynamic from "next/dynamic";
 import OrderCard from "../components/OrderCard/OrderCard";
+import { getFromLocalStorage } from "@/utils/local-storage";
 
 const MyOrders: React.FC = () => {
   const [activeTab, setActiveTab] = useState<"delivered" | "pending">(
     "delivered"
   );
-  const { token } = useAppSelector((state) => state.user);
+  const token = getFromLocalStorage("accessToken");
+  // const { token } = useAppSelector((state) => state.user);
   const { data: orders } = useGetUserOrdersQuery(token);
 
   const handleTabChange = (tab: "delivered" | "pending") => {

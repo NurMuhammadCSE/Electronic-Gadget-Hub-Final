@@ -669,7 +669,8 @@ import LoadingPage from "@/app/loading";
 import { useGetAllOrdersQuery } from "@/redux/api/orderApi";
 import { useGetProductsQuery } from "@/redux/api/productApi";
 import { useGetAllReviewsQuery } from "@/redux/api/reviewApi";
-import { useAppSelector } from "@/redux/hooks";
+// import { useAppSelector } from "@/redux/hooks";
+import { getFromLocalStorage } from "@/utils/local-storage";
 import React, { useState } from "react";
 import {
   BarChart,
@@ -684,7 +685,9 @@ import {
 } from "recharts";
 
 const AdminDashboard = () => {
-  const { token } = useAppSelector((state) => state.user);
+  // const { token } = useAppSelector((state) => state.user);
+  const token = getFromLocalStorage("accessToken");
+
   const { data: products = { data: [] }, isLoading: loadingProducts } = useGetProductsQuery(undefined);
   const { data: orders = { data: [] }, isLoading: loadingOrders } = useGetAllOrdersQuery(token);
   const { data: reviews } = useGetAllReviewsQuery(undefined);

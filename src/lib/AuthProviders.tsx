@@ -3,6 +3,7 @@
 
 import { userInfo } from "@/app/(commonLayout)/action/userInfo";
 import { createContext, useContext, useEffect, useState } from "react";
+
 const AuthContext = createContext<any>({
   user: null,
   setUser: () => {},

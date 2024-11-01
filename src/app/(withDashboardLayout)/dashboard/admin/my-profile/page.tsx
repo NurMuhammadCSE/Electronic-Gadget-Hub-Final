@@ -74,14 +74,15 @@
 // export default dynamic(() => Promise.resolve(MyProfile), { ssr: false });
 
 "use client";
-import { useAppSelector } from "@/redux/hooks";
 import React from "react";
 import Image from "next/image";
 import dynamic from "next/dynamic";
+import { getUserInfo } from "@/app/(commonLayout)/action/userInfoData";
 
 const MyProfile = () => {
   // Get user data from Redux store
-  const { user } = useAppSelector((state) => state.user);
+  // const { user } = useAppSelector((state) => state.user);
+  const user = getUserInfo();
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center py-10">

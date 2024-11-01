@@ -22,7 +22,10 @@ const Banner: React.FC = () => {
   }
 
   return (
-    <section className="relative text-white overflow-hidden rounded-md">
+    <section
+      className="relative text-white overflow-hidden rounded-md"
+      style={{ backgroundColor: "#608BC1" }}
+    >
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center"

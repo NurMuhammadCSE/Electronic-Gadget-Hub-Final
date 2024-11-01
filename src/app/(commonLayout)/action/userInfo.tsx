@@ -19,7 +19,7 @@ export async function signUpUser(pre: FormData, fromData: FormData) {
     throw error;
   }
 }
-export async function loginUser(pre: FormData, fromData: FormData) {
+export async function loginUser(fromData: FormData) {
   try {
     const formattedData = JSON.stringify(Object.fromEntries(fromData));
     const res = await fetch(`${process.env.serverUrl}/auth/login`, {
@@ -67,3 +67,5 @@ export async function logOut() {
     throw error;
   }
 }
+
+

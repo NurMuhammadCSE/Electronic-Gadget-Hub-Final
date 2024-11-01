@@ -34,11 +34,14 @@ import axios from "axios";
 import Image from "next/image";
 import LoadingPage from "@/app/loading";
 import dynamic from "next/dynamic";
+import { getFromLocalStorage } from "@/utils/local-storage";
 
 const AdminProductsTable: React.FC = () => {
   const { data: productsData, isLoading, error } = useGetProductsQuery("");
   const [deleteProduct] = useDeleteProductMutation();
-  const { token } = useAppSelector((state) => state.user);
+  // const { token } = useAppSelector((state) => state.user);
+  const token = getFromLocalStorage("accessToken");
+
   const [updateProduct] = useUpdateProductMutation();
 
   // State for modal
