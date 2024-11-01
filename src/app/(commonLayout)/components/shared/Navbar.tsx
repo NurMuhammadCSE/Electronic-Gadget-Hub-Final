@@ -346,7 +346,7 @@ function NavBar() {
           </Link>
         </NavbarItem>
         <NavbarItem>
-          {decodedToken?.email && (
+          {user?.email || decodedToken?.email && (
             <Link href={routeMap[user.role] || "/dashboard/my-orders"}>
               Dashboard
             </Link>
@@ -363,7 +363,7 @@ function NavBar() {
         </NavbarItem>
 
         {/* Authentication */}
-        {decodedToken?.email ? (
+        {user?.email || decodedToken?.email ? (
           <NavbarItem>
             <Button onClick={handleLogout} color="primary" variant="flat">
               Logout
