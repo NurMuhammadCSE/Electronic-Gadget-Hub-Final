@@ -294,8 +294,12 @@ function NavBar() {
     router.push("/"); // Redirect to home after logout
   };
 
+  let decodedToken: any;
   // console.log("Token from cookie:", token);
-  // const decodedToken: any = jwtDecode(token);
+  if (token) {
+    decodedToken = jwtDecode(token);
+    // console.log(decodedToken);
+  }
 
   return (
     <Navbar
@@ -342,7 +346,7 @@ function NavBar() {
           </Link>
         </NavbarItem>
         <NavbarItem>
-          {user?.email && (
+          {decodedToken?.email && (
             <Link href={routeMap[user.role] || "/dashboard/my-orders"}>
               Dashboard
             </Link>
@@ -359,7 +363,7 @@ function NavBar() {
         </NavbarItem>
 
         {/* Authentication */}
-        {user?.email ? (
+        {decodedToken?.email ? (
           <NavbarItem>
             <Button onClick={handleLogout} color="primary" variant="flat">
               Logout
