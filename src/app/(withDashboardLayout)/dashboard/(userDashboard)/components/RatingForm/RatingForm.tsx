@@ -36,7 +36,7 @@ const RatingForm: React.FC<{ product: any }> = ({ product }) => {
       </div>
       <button
         type="submit"
-        className="px-4 py-2 bg-blue-600 text-white rounded-lg"
+        className="px-4 py-2 bg-[#133E87] text-white rounded-lg"
       >
         Submit Review
       </button>

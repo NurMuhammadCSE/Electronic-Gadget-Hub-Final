@@ -36,7 +36,7 @@ const MyOrders: React.FC = () => {
           <button
             className={`px-4 py-2 ${
               activeTab === "delivered"
-                ? "bg-gray-700 text-white"
+                ? "bg-[#133E87] text-white"
                 : "bg-gray-100 text-gray-700"
             } rounded-lg`}
             onClick={() => handleTabChange("delivered")}
@@ -46,7 +46,7 @@ const MyOrders: React.FC = () => {
           <button
             className={`px-4 py-2 ${
               activeTab === "pending"
-                ? "bg-gray-700 text-white"
+                ? "bg-[#133E87] text-white"
                 : "bg-gray-100 text-gray-700"
             } rounded-lg`}
             onClick={() => handleTabChange("pending")}

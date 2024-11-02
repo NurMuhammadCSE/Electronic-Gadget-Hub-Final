@@ -123,7 +123,7 @@ const CheckoutPage = () => {
 
           <button
             onClick={handleProceedCheckout}
-            className="w-full bg-green-600 text-white text-lg font-semibold py-3 rounded-md mt-6"
+            className="w-full bg-[#133E87] text-white text-lg font-semibold py-3 rounded-md mt-6"
           >
             Proceed Checkout
           </button>

@@ -30,7 +30,7 @@ const ProductReviews: React.FC = () => {
     return <p className="text-center text-red-500">Error Loading Reviews</p>;
 
   return (
-    <section className="py-12 bg-gradient-to-r from-indigo-50 to-blue-50">
+    <section className="py-12">
       <h2 className="text-4xl font-bold text-center mb-10 text-gray-800">
         Top Product Reviews & Ratings
       </h2>
@@ -68,7 +68,7 @@ const ProductReviews: React.FC = () => {
       >
         {reviews?.data?.map((testimonial: any, index: any) => (
           <SwiperSlide key={index}>
-            <div className="flex flex-col items-center text-center bg-white shadow-lg rounded-lg p-6 h-full transition-transform transform hover:scale-105 hover:shadow-2xl duration-300 ease-in-out">
+            <div className="flex flex-col items-center text-center bg-white bg-gradient-to-r from-blue-50 to-blue-100 shadow-lg rounded-lg p-6 h-full transition-transform transform hover:scale-105 hover:shadow-2xl duration-300 ease-in-out">
               <Image
                 height={120}
                 width={120}

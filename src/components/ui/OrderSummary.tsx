@@ -44,7 +44,7 @@ const OrderSummary = () => {
       <div className="px-6 pb-6">
         <button
           onClick={(e) => {
-            // e.stopPropagation();
+            e.stopPropagation();
             handleClearCart();
           }}
           className="w-full flex items-center justify-between px-4 py-2 text-xs font-semibold text-white bg-red-600 rounded-md hover:bg-red-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-red-500 mb-4"
@@ -55,10 +55,10 @@ const OrderSummary = () => {
 
         <Link href="/checkout">
           <button
-            onClick={(e) => {
-              e.stopPropagation();
-            }}
-            className="w-full flex items-center justify-between px-4 py-2 text-xs font-semibold text-white bg-green-600 rounded-md hover:bg-green-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-green-500"
+            // onClick={(e) => {
+            //   e.stopPropagation();
+            // }}
+            className="w-full flex items-center justify-between px-4 py-2 text-xs font-semibold text-white bg-[#133E87] rounded-md hover:bg-[#133E87] transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-[#133E87]"
           >
             <span>Proceed to Checkout</span>
             <CreditCard className="inline" width={15} height={15} />

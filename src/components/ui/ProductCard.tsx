@@ -24,7 +24,7 @@ const ProductCard = ({ product }: { product: Product }) => {
   };
 
   return (
-    <div className="bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105">
+    <div className="bg-white bg-gradient-to-r from-blue-50 to-blue-100 border border-gray-200 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105">
       <Link href={`/product/${_id}`}>
         {/* <img src={imageUrl} alt={name} className="w-full h-40 object-cover" /> */}
         <Image
@@ -52,7 +52,8 @@ const ProductCard = ({ product }: { product: Product }) => {
               e.stopPropagation();
               handleAddToCart(product);
             }}
-            className="px-4 py-2 bg-[#2A4460] text-white font-semibold rounded-lg hover:bg-[#5f76a5] focus:outline-none focus:ring-2"
+            className="px-4 py-2 font-semibold rounded-lg hover:bg-[#608BC1] focus:outline-none focus:ring-2"
+            style={{ backgroundColor: "#133E87", color: "#FFFFFF" }}
           >
             Add to Cart
           </button>

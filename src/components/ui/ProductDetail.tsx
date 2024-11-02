@@ -71,7 +71,8 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
             </div>
             <button
               onClick={onAddToCart}
-              className="px-4 py-2 bg-[#2A4460] text-white font-semibold rounded-lg hover:bg-[#5f76a5] focus:outline-none focus:ring-2"
+              className="px-4 py-2 font-semibold rounded-lg hover:bg-[#608BC1] focus:outline-none focus:ring-2"
+              style={{ backgroundColor: "#133E87", color: "#FFFFFF" }}
             >
               Add to Cart
             </button>

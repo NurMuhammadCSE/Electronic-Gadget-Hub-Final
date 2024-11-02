@@ -52,10 +52,10 @@ const LatestArrivals: React.FC = () => {
         {products.map((product) => (
           <div
             key={product.id}
-            className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 relative"
+            className="bg-white bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 relative"
           >
             {/* Label */}
-            <span className="absolute top-2 left-2 bg-green-500 text-white text-xs font-bold py-1 px-3 rounded-full">
+            <span className="absolute top-2 left-2 bg-[#133E87] text-white text-xs font-bold py-1 px-3 rounded-full">
               New Arrival
             </span>
 

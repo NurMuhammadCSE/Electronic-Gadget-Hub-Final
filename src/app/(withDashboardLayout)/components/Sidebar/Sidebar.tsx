@@ -56,7 +56,7 @@ const Sidebar: React.FC = () => {
       <div
         className={`z-10 md:fixed flex justify-between overflow-x-hidden inset-y-0 left-0 transform ${
           isOpen && "-translate-x-full"
-        }  bg-[#ffffff] dark:bg-black dark:text-white text-black w-64 px-6 pt-16  transition-transform duration-300 ease-in-out shadow-lg`} // Add pt-16 here to offset for navbar
+        }  bg-[#133E87] text-white w-64 px-6 pt-16  transition-transform duration-300 ease-in-out shadow-lg`} // Add pt-16 here to offset for navbar
       >
         {/* Sidebar Navigation */}
         <nav className="flex flex-col space-y-4">
@@ -64,7 +64,7 @@ const Sidebar: React.FC = () => {
             <Link
               key={item.label}
               href={item.href}
-              className="flex items-center p-2 rounded-md dark:hover:bg-gray-400 hover:bg-[#ece8e8] transition duration-200"
+              className="flex items-center p-2 rounded-md dark:hover:bg-[#608BC1] hover:bg-[#608BC1] transition duration-200"
             >
               {item.icon}
               <span className="ml-3 text-lg">{item.label}</span>

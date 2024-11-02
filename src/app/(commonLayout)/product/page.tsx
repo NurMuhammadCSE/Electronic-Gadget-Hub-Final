@@ -81,7 +81,8 @@ const ProductPage = () => {
               <div className="relative mt-5 inset-0 flex items-center justify-center">
                 <Link
                   href={`/products/${category}`}
-                  className="bg-[#2A4460] text-white py-2 px-4 rounded-lg hover:bg-[#5f76a5]"
+                  className="py-2 px-4 rounded-lg hover:bg-[#608BC1]"
+                  style={{ backgroundColor: "#133E87", color: "#FFFFFF" }}
                 >
                   See More
                 </Link>

@@ -40,17 +40,17 @@ const Sidebar: React.FC = () => {
 
         className={`z-10 md:fixed flex justify-between overflow-x-hidden inset-y-0 left-0 transform ${
           isOpen && "-translate-x-full"
-        }  bg-[#ffffff] dark:bg-black dark:text-white text-black w-64 px-6 pt-16  transition-transform duration-300 ease-in-out shadow-lg`}
+        }  bg-[#133E87] text-white w-64 px-6 pt-16  transition-transform duration-300 ease-in-out shadow-lg`}
       >
 
         <nav className="flex flex-col space-y-4">
           {/* Orders Section */}
           <button
             onClick={() => handleTabChange("orders")}
-            className={`py-2 px-4 text-left rounded-lg transition-colors ${
+            className={`mt-2 py-2 px-4 text-left rounded-lg transition-colors ${
               activeTab === "orders"
-                ? "bg-gray-400 text-white"
-                : "hover:bg-gray-400 text-black"
+                ? "bg-[#608BC1] text-white"
+                : "hover:bg-[#608BC1] text-white"
             }`}
           >
             My Orders
@@ -61,8 +61,8 @@ const Sidebar: React.FC = () => {
             onClick={() => handleTabChange("profile")}
             className={`py-2 px-4 text-left rounded-lg transition-colors ${
               activeTab === "profile"
-                ? "bg-gray-400 text-white"
-                : "hover:bg-gray-400 text-black"
+                ? "bg-[#608BC1] text-white"
+                : "hover:bg-[#608BC1] text-white"
             }`}
           >
             My Profile

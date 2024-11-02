@@ -1,10 +1,11 @@
+"use client";
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import 'swiper/css/effect-coverflow';
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 import Image from "next/image";
+import Link from "next/link";
 
 // Example Product Data
 const products = [
@@ -38,82 +39,74 @@ const products = [
   },
   {
     id: 5,
-    name: "Energy-efficient Fridge",
-    category: "Fridge",
-    price: 799.99,
-    imageUrl: "https://tinyurl.com/muh778t4",
+    name: "Bluetooth Speaker",
+    category: "Speaker",
+    price: 199.99,
+    imageUrl: "https://tinyurl.com/5a8vf62a",
   },
   {
     id: 6,
-    name: "OLED TV",
-    category: "TV",
-    price: 1099.99,
+    name: "Smart Watch",
+    category: "Wearable",
+    price: 249.99,
     imageUrl: "https://tinyurl.com/248ufehm",
   },
 ];
 
 export default function FeaturedProducts() {
   return (
-    <div className="my-12 px-4 lg:px-20">
-      <h2 className="text-3xl lg:text-4xl font-bold text-center mb-6">
-        Featured Products
-      </h2>
-      <Swiper
-        // effect={"coverflow"}
-        // grabCursor={true}
-        // centeredSlides={true}
-        // slidesPerView={"auto"}
-        // coverflowEffect={{
-        //   rotate: 50,
-        //   stretch: 0,
-        //   depth: 100,
-        //   modifier: 1,
-        //   slideShadows: true,
-        // }}
-        // // spaceBetween={30}
-        slidesPerView={1} // Default for mobile
-        spaceBetween={10}
-        pagination={{ clickable: true }}
-        modules={[Pagination]}
-        className="mySwiper"
-        breakpoints={{
-          // Adjusted breakpoints for better responsiveness
-          1280: { slidesPerView: 4, spaceBetween: 30 }, // Large Desktop
-          1024: { slidesPerView: 3, spaceBetween: 25 }, // Desktop
-          768: { slidesPerView: 2, spaceBetween: 20 }, // Tablet
-          640: { slidesPerView: 2, spaceBetween: 15 }, // Small Tablet
-          480: { slidesPerView: 1, spaceBetween: 10 }, // Mobile
-        }}
-      >
-        {products.map((product) => (
-          <SwiperSlide key={product.id}>
-            <div className="relative p-4 bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
-              <div className="relative">
-                <Image
-                  src={product.imageUrl}
-                  alt={product.name}
-                  className="w-full h-48 md:h-64 object-cover rounded-lg transition-transform duration-300"
-                  height={500}
-                  width={500}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#2A4460]/80 to-transparent flex items-center justify-center">
-                  <h3 className="text-lg md:text-xl font-bold text-white text-center">
-                    {product.name}
-                  </h3>
+    <section className="py-12">
+      <div className="container mx-auto">
+        <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">
+          Featured Products
+        </h2>
+        <Swiper
+          slidesPerView={1}
+          spaceBetween={20}
+          pagination={{ clickable: true }}
+          modules={[Pagination]}
+          className="mySwiper"
+          breakpoints={{
+            1280: { slidesPerView: 3, spaceBetween: 30 },
+            1024: { slidesPerView: 3, spaceBetween: 25 },
+            768: { slidesPerView: 2, spaceBetween: 20 },
+            640: { slidesPerView: 1, spaceBetween: 15 },
+          }}
+        >
+          {products.map((product) => (
+            <SwiperSlide key={product.id}>
+              <div className="p-4 bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition bg-gradient-to-r from-blue-50 to-blue-100 duration-300 transform hover:scale-105">
+                <div className="relative">
+                  <Image
+                    src={product.imageUrl}
+                    alt={product.name}
+                    className="w-full h-48 object-cover rounded-lg"
+                    height={300}
+                    width={400}
+                  />
+                  {/* Overlay and Shop Now Button */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                    <h3 className="text-lg font-semibold text-white mb-2">
+                      {product.name}
+                    </h3>
+                    <Link href="/product">
+                      <button className="bg-white text-black px-4 py-2 rounded-full font-medium hover:bg-gray-200 transition">
+                        Shop Now
+                      </button>
+                    </Link>
+                  </div>
+                </div>
+                <div className="p-4 text-center">
+                  <p className="text-gray-600">{product.category}</p>
+                  <p className="text-xl font-semibold text-gray-800 mt-2">
+                    ${product.price.toFixed(2)}
+                  </p>
                 </div>
               </div>
-              <div className="text-center mt-4">
-                <p className="text-sm md:text-base text-gray-500">
-                  {product.category}
-                </p>
-                <p className="text-lg font-bold mt-2">
-                  ${product.price.toFixed(2)}
-                </p>
-              </div>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+    </section>
   );
 }

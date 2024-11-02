@@ -82,7 +82,7 @@ const SpecialOffers: React.FC = () => {
         {offers.map((offer) => (
           <div
             key={offer.id}
-            className="p-6 bg-white-100 shadow-lg rounded-lg relative"
+            className="p-6 bg-white-100 bg-gradient-to-r from-blue-50 to-blue-100 shadow-lg rounded-lg relative"
           >
             <Image
               src={offer.imageUrl}
@@ -104,7 +104,7 @@ const SpecialOffers: React.FC = () => {
               </div>
               <Link
                 href="/product"
-                className="bg-[#2A4460] mt-4 text-white font-semibold py-3 px-4 rounded-lg hover:bg-[#5f76a5] transition duration-300 shadow-lg text-xl md:text-2xl"
+                className="bg-[#133E87] mt-4 text-white font-semibold py-3 px-4 rounded-lg hover:bg-[#608BC1] transition duration-300 shadow-lg text-xl md:text-2xl"
               >
                 Shop Now
               </Link>

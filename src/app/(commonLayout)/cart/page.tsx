@@ -67,10 +67,10 @@ function Cart() {
               <CartDetails key={product._id} product={product} />
             ))
           ) : (
-            <p className="text-2xl text-red-500">No Products Found</p>
+            <p className="text-2xl text-red-500">Your cart is empty</p>
           )}
         </div>
-        <OrderSummary />
+        {products.length > 0 && <OrderSummary />}
       </div>
     </div>
   );

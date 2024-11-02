@@ -32,14 +32,14 @@ const CartDetails = ({ product }:any) => {
         <div className="flex items-center space-x-2">
           <button
             onClick={() => handleQuantity("decrement", product._id)}
-            className="bg-green-500 text-white p-2 rounded-full hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400 transition"
+            className="bg-[#133E87] text-white p-2 rounded-full hover:bg-[#133E87] focus:outline-none focus:ring-2 focus:ring-[#133E87] transition"
           >
             <Minus size={18} />
           </button>
           <span className="text-lg font-semibold">{product.quantity}</span>
           <button
             onClick={() => handleQuantity("increment", product._id)}
-            className="bg-green-500 text-white p-2 rounded-full hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400 transition"
+            className="bg-[#133E87] text-white p-2 rounded-full hover:bg-[#133E87] focus:outline-none focus:ring-2 focus:ring-[#133E87] transition"
           >
             <Plus size={18} />
           </button>

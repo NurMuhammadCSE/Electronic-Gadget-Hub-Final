@@ -43,7 +43,7 @@ const WhyShopWithUs: React.FC = () => {
         {benefits.map((benefit) => (
           <div
             key={benefit.id}
-            className="flex flex-col items-center p-6 bg-white shadow-lg rounded-lg hover:shadow-2xl transition duration-300"
+            className="flex flex-col items-center p-6 bg-white bg-gradient-to-r from-blue-50 to-blue-100 shadow-lg rounded-lg hover:shadow-2xl transition duration-300"
           >
             <div className="mb-4">{benefit.icon}</div>
             <h3 className="text-xl font-semibold mb-2">{benefit.title}</h3>
