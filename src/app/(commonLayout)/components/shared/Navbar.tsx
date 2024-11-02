@@ -17,6 +17,7 @@ import { useAppSelector } from "@/redux/hooks";
 import dynamic from "next/dynamic";
 import { getUserInfo } from "../../action/userInfoData";
 import { useRouter } from "next/navigation";
+import Cookies from "js-cookie";
 
 // Define a User type with specific roles
 interface User {
@@ -37,6 +38,9 @@ function NavBar() {
   };
 
   const user: User | null = getUserInfo();
+
+  const accessToken = Cookies.get("accessToken");
+  // console.log(accessToken);
 
   const handleLogout = () => {
     localStorage.removeItem("accessToken");
@@ -98,7 +102,7 @@ function NavBar() {
           </Link>
         </NavbarItem>
         <NavbarItem>
-          {user && (
+          {user && accessToken && (
             <Link href={routeMap[user.role] || "/dashboard/my-orders"}>
               Dashboard
             </Link>
@@ -115,7 +119,7 @@ function NavBar() {
         </NavbarItem>
 
         {/* Authentication */}
-        {user ? (
+        {user && accessToken ? (
           <NavbarItem>
             <Button
               onClick={handleLogout}
