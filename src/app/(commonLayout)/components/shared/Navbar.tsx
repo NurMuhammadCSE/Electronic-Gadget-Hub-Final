@@ -111,7 +111,7 @@ function NavBar() {
 
         {/* Cart Icon */}
         <NavbarItem>
-          <Badge content={selectedItems} color="warning">
+          <Badge content={selectedItems} color="primary">
             <Link href="/cart">
               <ShoppingCart size={24} />
             </Link>
