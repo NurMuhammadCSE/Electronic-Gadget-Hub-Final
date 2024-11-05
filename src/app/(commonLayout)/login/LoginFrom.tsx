@@ -7,10 +7,10 @@ import { useRouter } from "next/navigation";
 import ActionSubmitButton from "../components/shared/submitButton/ActionSubmitButton";
 import { EyeSlashFilledIcon } from "./EyeSlashFilledIcon";
 import { EyeFilledIcon } from "./EyeFilledIcon";
-// import { useLoginMutation } from "@/redux/api/authApi";
+import { useLoginMutation } from "@/redux/api/authApi";
 import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { authLoginUser } from "../action/authUtils";
+// import { authLoginUser } from "../action/authUtils";
 
 export type Inputs = {
   email: string;
@@ -19,7 +19,7 @@ export type Inputs = {
 
 export default function LoginForm() {
   const router = useRouter();
-  // const [login] = useLoginMutation();
+  const [login] = useLoginMutation();
 
   const {
     register,
@@ -32,28 +32,26 @@ export default function LoginForm() {
       email: data.email,
       password: data.password,
     };
+    const user = await login(loginInfo);
     try {
-      // const user = await login(loginInfo);
-      const user = await authLoginUser(loginInfo);
-      if (user) {
-        const { token } = user;
-        document.cookie = `accessToken=${token}`;
-        localStorage.setItem("accessToken", token);
-        router.push("/");
-      }
+      // console.log(user);
+      // const user = await authLoginUser(loginInfo);
+
+      const { token } = user?.data;
+      document.cookie = `accessToken=${token}`;
+      localStorage.setItem("accessToken", token);
+      router.push("/");
+      toast.success("User Login Successfully");
       router.refresh();
-
+    } catch (error) {
+      console.error(error);
       const err = user?.error as { data?: { message?: string } };
-
+      // console.log(err);
       if (err?.data?.message === "User Not Found") {
         toast.error("User Not Found");
       } else if (err?.data?.message === "Password Not Matched") {
         toast.error("Password Not Matched");
-      } else {
-        toast.success("User Login Successfully");
       }
-    } catch (error) {
-      console.error(error);
     }
   };
 
