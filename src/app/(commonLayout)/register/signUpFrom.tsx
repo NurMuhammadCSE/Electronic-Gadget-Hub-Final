@@ -90,7 +90,7 @@ const SignUpFrom = () => {
         <div className="flex justify-end font-medium text-[#30415A] hover:text-[#3D6D8D]">
           <Link href="/login">Already have account?</Link>
         </div>
-        <div className="flex mt-5 justify-center bg-[#133E87] text-white">
+        <div className="flex mt-5 justify-center">
           <ActionSubmitButton>Sign Up</ActionSubmitButton>
         </div>
       </form>
