@@ -125,7 +125,7 @@ export default function LoginForm() {
             </a>
           </div> */}
         </div>
-        <div className="flex justify-center bg-[#133E87] text-white">
+        <div className="flex justify-center">
           <ActionSubmitButton>Login</ActionSubmitButton>
         </div>
       </form>
