@@ -230,7 +230,7 @@ const AddProduct = () => {
           type="submit"
           fullWidth
           isDisabled={loading}
-          className="mt-4 bg-[#2A4460] text-white"
+          className="mt-4 bg-[#133E87] text-white"
         >
           {loading ? <Spinner /> : "Add Product"}
         </Button>

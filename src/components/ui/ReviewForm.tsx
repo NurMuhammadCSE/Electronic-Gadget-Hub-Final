@@ -70,7 +70,7 @@ const ReviewForm: React.FC<ReviewFormProps> = ({ productId }) => {
           </select>
         </div>
         <button
-          className="px-4 py-2 bg-blue-600 text-white rounded"
+          className="px-4 py-2 bg-[#133E87] text-white rounded"
           type="submit"
           disabled={isLoading} // Disable button while submitting
         >
