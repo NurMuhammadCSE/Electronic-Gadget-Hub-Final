@@ -46,13 +46,13 @@ const Banner: React.FC = () => {
               BEST QUALITY PRODUCTS
             </h6>
             <h1 className="text-3xl md:text-5xl font-bold text-gray-800 leading-tight">
-            Discover the Future of Gadgets
+              Discover the Future of Gadgets
             </h1>
             <p className="text-gray-600 mt-4 mb-8">
-            Dive into a world of cutting-edge technology and unbeatable deals.
-            Find the perfect gadget to enhance your life today.
+              Dive into a world of cutting-edge technology and unbeatable deals.
+              Find the perfect gadget to enhance your life today.
             </p>
-            <Link href="/shop">
+            <Link href="/product">
               <button className="flex items-center justify-center bg-[#133E87] text-white px-6 py-3 rounded-lg shadow-md hover:bg-[#608BC1] transition duration-300 ease-in-out">
                 <i className="fas fa-cart-arrow-down mr-2"></i> Shop Now
               </button>
